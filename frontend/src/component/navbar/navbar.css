@@ -1,0 +1,94 @@
+:root {
+  --bg: #0b0c0e;
+  --muted: #040303;
+  --text: #e9eef2;
+  --ring: 0 0 0 3px rgba(29, 185, 84, 0.25);
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 22px;
+  background:#ffffff;
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--text);
+}
+.brand-logo {
+  font-size: 22px;
+}
+.brand-text {
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  color: #041006;
+}
+
+.links {
+  display: flex;
+  gap: 16px;
+}
+.links a {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 8px 10px;
+  border-radius: 10px;
+}
+.links a.active {
+  color: #0b0c0d;
+  background: #e9eef2;
+  font-weight: 700;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+}
+.btn {
+  border: 0;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 800;
+}
+.btn.ghost {
+  background: #0f1113;
+  color: var(--text);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 10px 14px;
+}
+.btn.primary {
+  background: #1db954;
+  color: #041006;
+  padding: 10px 14px;
+}
+.btn.gradient {
+  background: linear-gradient(135deg, #a855f7, #1db954);
+  color: white;
+  padding: 10px 16px;
+}
+.btn:focus {
+  outline: none;
+  box-shadow: var(--ring);
+}
+@media (max-width: 780px) {
+  .links {
+    display: none;
+  }
+}

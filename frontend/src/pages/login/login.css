@@ -1,0 +1,87 @@
+:root{
+    --green:#1DB954; --green-600:#19a34a; --text:#e8e8e8; --sub:#a9a9a9;
+  }
+  
+  html, body, #root { height: 100%; }
+  body {
+    margin: 0;
+   
+    color: var(--text);
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial;
+  }
+  
+  .auth-wrap {
+    min-height: calc(100vh - 120px); /* space for navbar/footer if present */
+    display: grid;
+    place-items: center;
+    padding: 24px 16px;
+  }
+  
+  .auth-card {
+    width: 40%;
+    background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)), #16181b;
+    border: 1px solid rgba(255,255,255,.06);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0,0,0,.45), inset 0 1px rgba(255,255,255,.04);
+    backdrop-filter: blur(6px);
+    
+  }
+  
+  .brand-row { display:flex; align-items:center; gap:10px; margin-bottom:12px; }
+  .brand-row .logo { font-size: 28px; }
+  .brand-row .title { margin:0; }
+  
+  .form { display: grid; gap: 14px; }
+  .field { display: grid; gap: 8px; }
+  .field > span { font-size: 13px; color: var(--sub); }
+  .field input {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: #0f1113;
+    border: 1px solid rgba(255,255,255,.08);
+    color: var(--text);
+    outline: none;
+  }
+  .field input:focus {
+    border-color: var(--green);
+    box-shadow: 0 0 0 3px rgba(29,185,84,.25);
+  }
+  
+  .pwd-wrap { display:flex; align-items:center; gap:8px; }
+  .pwd-wrap input { flex:1; }
+  
+  button.ghost {
+    border:1px solid rgba(255,255,255,.08);
+    background:#0f1113;
+    color: var(--sub);
+    padding:10px 12px;
+    border-radius:10px;
+    cursor:pointer;
+  }
+  
+  .primary {
+    background: var(--green);
+    color: #061006;
+    border: 0;
+    border-radius: 12px;
+    padding: 12px 14px;
+    font-weight: 800;
+    cursor: pointer;
+  }
+  .primary:hover { background: var(--green-600); }
+  
+  .alert.error {
+    padding: 10px 12px;
+    border-radius: 10px;
+    font-size: 14px;
+    background: #2a0f13;
+    color: #ffd2d6;
+    border: 1px solid rgba(255,0,0,.25);
+  }
+  
+  .hint { color: var(--sub); font-size: 14px; margin-top: 4px; }
+  .link { color: var(--green); text-decoration: none; }
+  .link:hover { text-decoration: underline; }
+  
