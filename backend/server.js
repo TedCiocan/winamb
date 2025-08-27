@@ -13,37 +13,38 @@ await connectDB();
 app.use(cors());
 app.use(express.json()); // to parse JSON bodies
 
-// const clientId = process.env.SPOTIFY_CLIENT_ID;
-// const clientSecret = process.env.SPOTIFY_CLIENT_SECRET;
+const clientId = process.env.SPOTIFY_CLIENT_ID;
+const clientSecret = process.env.SPOTIFY_CLIENT_SECRET;
 // const SECRET_KEY = process.env.JWT_SECRET || 'default_secret';
 
 // // In-memory user store (for MVP demo)
 // const users = [];
 
-// // Get Spotify token
-// let accessToken = '';
-// let tokenExpiresAt = 0;
+// Get Spotify token
+let accessToken = '';
+let tokenExpiresAt = 0;
 
-// async function getSpotifyToken() {
-//   const res = await fetch('https://accounts.spotify.com/api/token', {
-//     method: 'POST',
-//     headers: {
-//       'Authorization': 'Basic ' + Buffer.from(clientId + ':' + clientSecret).toString('base64'),
-//       'Content-Type': 'application/x-www-form-urlencoded'
-//     },
-//     body: 'grant_type=client_credentials'
-//   });
-//   const data = await res.json();
-//   accessToken = data.access_token;
-//   tokenExpiresAt = Date.now() + (data.expires_in * 1000);
-// }
+async function getSpotifyToken() {
+  const res = await fetch('https://accounts.spotify.com/api/token', {
+    method: 'POST',
+    headers: {
+      'Authorization': 'Basic ' + Buffer.from(clientId + ':' + clientSecret).toString('base64'),
+      'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    body: 'grant_type=client_credentials'
+  });
+  const data = await res.json();
+  accessToken = data.access_token;
+  tokenExpiresAt = Date.now() + (data.expires_in * 1000);
+  console.log('✅ Spotify token obtained');
+}
 
-// async function ensureSpotifyToken(req, res, next) {
-//   if (!accessToken || Date.now() >= tokenExpiresAt) {
-//     await getSpotifyToken();
-//   }
-//   next();
-// }
+async function ensureSpotifyToken(req, res, next) {
+  if (!accessToken || Date.now() >= tokenExpiresAt) {
+    await getSpotifyToken();
+  }
+  next();
+}
 
 // // Auth middleware
 // function authenticateToken(req, res, next) {
@@ -57,27 +58,34 @@ app.use(express.json()); // to parse JSON bodies
 //   });
 // }
 
-
-
-
 // Search Spotify tracks
-
-// app.get('/api/search', ensureSpotifyToken, authenticateToken, async (req, res) => {
-// //  app.get('/api/search', ensureSpotifyToken, async (req, res) => {
-//   const query = req.query.q;
-//   if (!query) return res.status(400).json({ error: 'Missing ?q=' });
-//   try {
-//     const spotifyRes = await fetch(`https://api.spotify.com/v1/search?q=${encodeURIComponent(query)}&type=track&limit=5`, {
-//       headers: { 'Authorization': 'Bearer ' + accessToken }
-//     });
-//     const data = await spotifyRes.json();
-//     res.json(data.tracks.items);
-//   } catch (err) {
-//     console.error(err);
-//     res.status(500).json({ error: 'Spotify API error' });
-//   }
-// });
-
+app.get('/api/v1/search', ensureSpotifyToken, async (req, res) => {
+  const query = req.query.q;
+  if (!query) return res.status(400).json({ error: 'Missing ?q=' });
+  try {
+    const spotifyRes = await fetch(`https://api.spotify.com/v1/search?q=${encodeURIComponent(query)}&type=track&limit=10`, {
+      headers: { 'Authorization': 'Bearer ' + accessToken }
+    });
+    const data = await spotifyRes.json();
+    
+    // Format the response with preview URLs and essential track info
+    const tracks = data.tracks.items.map(track => ({
+      id: track.id,
+      name: track.name,
+      artists: track.artists.map(artist => artist.name),
+      album: track.album.name,
+      preview_url: track.preview_url,
+      duration_ms: track.duration_ms,
+      image: track.album.images[0]?.url || null,
+      external_url: track.external_urls.spotify
+    }));
+    
+    res.json({ tracks, total: data.tracks.total, query });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Spotify API error' });
+  }
+});
 
 app.use("/api/v1/auth", authrouter);
 app.use("/api/v1/user", userrouter);
