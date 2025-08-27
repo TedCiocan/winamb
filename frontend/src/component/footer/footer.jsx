@@ -1,4 +1,5 @@
 import "./footer.css";
+import Logo from "../logo/logo.jsx";
 
 export default function Footer() {
   return (
@@ -6,11 +7,10 @@ export default function Footer() {
         <div className="footer-container">
         <div className="fbrand">
         <div className="brand-row">
-          <span className="logo">🎵</span><span className="text">MUSIC LAB</span>
+          <Logo size="medium" showText={true} />
         </div>
         <p>
-          Utrust is a seamless integration that gives e-commerce businesses the power to accept
-          digital currencies – and get all the benefit.
+          Winamb is a seamless music discovery platform that gives music lovers the power to search, preview, and discover millions of tracks with Spotify integration.
         </p>
         
       </div>

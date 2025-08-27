@@ -7,8 +7,8 @@ export default function Features() {
       <div className="features-container">
         {/* Hero Section */}
         <section className="features-hero">
-          <h1>🎵 MusicLab Features</h1>
-          <p>Discover everything that makes MusicLab the perfect platform for music lovers</p>
+          <h1>🎵 Winamb Features</h1>
+          <p>Discover everything that makes Winamb the perfect platform for music lovers</p>
         </section>
 
         {/* Main Features Grid */}
@@ -49,7 +49,7 @@ export default function Features() {
           <div className="feature-card">
             <div className="feature-icon">📱</div>
             <h3>Responsive Design</h3>
-            <p>Enjoy MusicLab on any device - desktop, tablet, or mobile. Our responsive design adapts to your screen.</p>
+            <p>Enjoy Winamb on any device - desktop, tablet, or mobile. Our responsive design adapts to your screen.</p>
             <ul>
               <li>Mobile-first approach</li>
               <li>Touch-friendly controls</li>

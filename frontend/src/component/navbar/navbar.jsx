@@ -1,5 +1,6 @@
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/authContext.jsx";
+import Logo from "../logo/logo.jsx";
 
 import "./navbar.css";
 export default function NavBar() {
@@ -9,8 +10,7 @@ export default function NavBar() {
   return (
     <header className="nav">
       <Link to="/" className="brand">
-        <span className="brand-logo">🎵</span>
-        <span className="brand-text">MUSIC LAB</span>
+        <Logo size="medium" showText={true} />
       </Link>
 
       <nav className="links">

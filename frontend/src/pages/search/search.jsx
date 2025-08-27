@@ -10,6 +10,7 @@ export default function Search() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [currentAudio, setCurrentAudio] = useState(null);
+  const [hasSearched, setHasSearched] = useState(false);
   const { token } = useAuth();
 
   const handleSearch = async (e) => {
@@ -18,6 +19,7 @@ export default function Search() {
 
     setLoading(true);
     setError('');
+    setHasSearched(true);
 
     try {
       const response = await fetch(`${API_BASE}/search?q=${encodeURIComponent(query)}`, {
@@ -162,7 +164,7 @@ export default function Search() {
           </div>
         )}
 
-        {!loading && tracks.length === 0 && query && (
+        {!loading && tracks.length === 0 && hasSearched && (
           <div className="no-results">
             <p>No tracks found for "{query}". Try a different search term.</p>
           </div>

@@ -5,11 +5,11 @@ export default function Blog() {
   const blogPosts = [
     {
       id: 1,
-      title: "Building MusicLab: A Journey into Modern Web Development",
+      title: "Building Winamb: A Journey into Modern Web Development",
       date: "August 25, 2025",
       category: "Development",
-      excerpt: "Discover how we built MusicLab using React, Node.js, and the Spotify API to create the ultimate music discovery platform.",
-      content: "When we set out to build MusicLab, our goal was simple: create a seamless music discovery experience that bridges the gap between searching and listening. Using modern web technologies like React for the frontend and Node.js with Express for the backend, we've crafted a platform that's both powerful and intuitive.",
+      excerpt: "Discover how we built Winamb using React, Node.js, and the Spotify API to create the ultimate music discovery platform.",
+      content: "When we set out to build Winamb, our goal was simple: create a seamless music discovery experience that bridges the gap between searching and listening. Using modern web technologies like React for the frontend and Node.js with Express for the backend, we've crafted a platform that's both powerful and intuitive.",
       readTime: "5 min read"
     },
     {
@@ -36,7 +36,7 @@ export default function Blog() {
       date: "August 10, 2025",
       category: "Design",
       excerpt: "How we created a mobile-first design that delivers an exceptional music experience across all screen sizes.",
-      content: "In today's multi-device world, responsive design isn't optional—it's essential. Our mobile-first approach ensures MusicLab looks and works beautifully whether you're on a smartphone, tablet, or desktop. Every component is carefully crafted to adapt seamlessly to different screen sizes.",
+      content: "In today's multi-device world, responsive design isn't optional—it's essential. Our mobile-first approach ensures Winamb looks and works beautifully whether you're on a smartphone, tablet, or desktop. Every component is carefully crafted to adapt seamlessly to different screen sizes.",
       readTime: "3 min read"
     },
     {
@@ -44,8 +44,8 @@ export default function Blog() {
       title: "MongoDB and Modern Data Management",
       date: "August 5, 2025",
       category: "Database",
-      excerpt: "Exploring how we use MongoDB for flexible user data storage and efficient session management in MusicLab.",
-      content: "MongoDB's document-based approach perfectly suits our needs for user management and session storage. Its flexibility allows us to evolve our data structure as MusicLab grows, while its performance ensures fast authentication and user data retrieval.",
+      excerpt: "Exploring how we use MongoDB for flexible user data storage and efficient session management in Winamb.",
+      content: "MongoDB's document-based approach perfectly suits our needs for user management and session storage. Its flexibility allows us to evolve our data structure as Winamb grows, while its performance ensures fast authentication and user data retrieval.",
       readTime: "4 min read"
     },
     {
@@ -54,7 +54,7 @@ export default function Blog() {
       date: "August 1, 2025",
       category: "Vision",
       excerpt: "Our roadmap for upcoming features including playlists, social sharing, and AI-powered music recommendations.",
-      content: "MusicLab is just getting started. Our roadmap includes exciting features like personal playlists, social music sharing, and AI-powered recommendations. We're building the future of music discovery, one feature at a time.",
+      content: "Winamb is just getting started. Our roadmap includes exciting features like personal playlists, social music sharing, and AI-powered recommendations. We're building the future of music discovery, one feature at a time.",
       readTime: "2 min read"
     }
   ];
@@ -64,8 +64,8 @@ export default function Blog() {
       <div className="blog-container">
         {/* Hero Section */}
         <section className="blog-hero">
-          <h1>🎵 MusicLab Blog</h1>
-          <p>Insights, tutorials, and updates from the MusicLab development team</p>
+          <h1>🎵 Winamb Blog</h1>
+          <p>Insights, tutorials, and updates from the Winamb development team</p>
         </section>
 
         {/* Featured Post */}
