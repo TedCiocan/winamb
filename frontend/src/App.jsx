@@ -4,6 +4,9 @@ import RootLayout from "./layout/layout";
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Login from "./pages/login/login";
 import SignUp from "./pages/signup/signup";
+import Search from "./pages/search/search";
+import Features from "./pages/features/features";
+import Blog from "./pages/blog/blog";
 import { AuthProvider } from "./context/authContext";
 function App() {
   
@@ -23,9 +26,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
-        
-        {/* <Route path="/features" element={<Features />} />
-        <Route path="/blog" element={<Blog />} /> */}
+        <Route path="/search" element={<Search />} />
+        <Route path="/features" element={<Features />} />
+        <Route path="/blog" element={<Blog />} />
       </Route>
     </Routes>
   </BrowserRouter>

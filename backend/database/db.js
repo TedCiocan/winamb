@@ -1,15 +1,19 @@
 // database/db.js
 import mongoose from "mongoose";
 
+// Use local MongoDB first, with Atlas as fallback only if local is not available
+const LOCAL_URI = "mongodb://localhost:27017/musiclab";
 const FALLBACK_URI =
   "mongodb+srv://subashneupane2022:America2022@cluster0.wwbxuse.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
-
-const MONGO_URI = process.env.MONGO_URI || FALLBACK_URI;
+const MONGO_URI = process.env.MONGO_URI || LOCAL_URI;
 const DB_NAME = process.env.DB_NAME || "musiclab";
 
 export default async function connectDB() {
   try {
+    console.log(`🔗 Attempting to connect to: ${MONGO_URI}`);
+    console.log(`📂 Database name: ${DB_NAME}`);
+    
     await mongoose.connect(MONGO_URI, {
       dbName: DB_NAME,
       // Optional niceties:

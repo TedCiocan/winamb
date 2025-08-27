@@ -87,7 +87,7 @@ export default function Home() {
 
       {/* TESTIMONIALS (simple static) */}
       <section className="testimonials">
-        <h2>Customers are loving MusicLab</h2>
+        <h2>Customers are loving Winamb</h2>
         <div className="grid">
           <article className="tcard">
             <header>
@@ -97,7 +97,7 @@ export default function Home() {
                 <small>CEO at Creativelab</small>
               </div>
             </header>
-            <p>OMG! I cannot believe that I have got a brand new landing page after getting @MusicLab…</p>
+            <p>OMG! I cannot believe that I have got a brand new landing page after getting @Winamb…</p>
           </article>
           <article className="tcard">
             <header>
@@ -107,7 +107,7 @@ export default function Home() {
                 <small>CEO at Creativelab</small>
               </div>
             </header>
-            <p>OMG! I cannot believe that I have got a brand new landing page after getting @MusicLab…</p>
+            <p>OMG! I cannot believe that I have got a brand new landing page after getting @Winamb…</p>
           </article>
           <article className="tcard">
             <header>

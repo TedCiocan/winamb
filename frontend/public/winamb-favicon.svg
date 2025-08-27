@@ -1,0 +1,22 @@
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="16" cy="16" r="15" fill="url(#faviconGradient)" stroke="#1ed760" stroke-width="1"/>
+  
+  <!-- Music Note -->
+  <path 
+    d="M11 8 L21 6.5 L21 19 C21 21.5 19 23 16.5 23 C14 23 12.5 21.5 12.5 19 C12.5 16.5 14 15 16.5 15 C17.5 15 18.5 15.5 19 16 L19 10 L13 11 L13 22 C13 24.5 11 26 8.5 26 C6 26 4.5 24.5 4.5 22 C4.5 19.5 6 18 8.5 18 C9.5 18 10.5 18.5 11 19 Z" 
+    fill="white" 
+  />
+  
+  <!-- Sound waves -->
+  <path d="M24 11 Q26 13 26 16 Q26 19 24 21" stroke="white" stroke-width="1" fill="none"/>
+  <path d="M26 9 Q28.5 12 28.5 16 Q28.5 20 26 23" stroke="white" stroke-width="1" fill="none"/>
+  
+  <!-- Gradient Definition -->
+  <defs>
+    <linearGradient id="faviconGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1DB954"/>
+      <stop offset="100%" stop-color="#1ed760"/>
+    </linearGradient>
+  </defs>
+</svg>
